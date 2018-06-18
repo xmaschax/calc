@@ -69,7 +69,8 @@ $(document).ready(function() {
     output = [result];
   }
 
-
+  // calculate percentage like the calculate app at macOS
+  // except for negative number or equal zero
   function percentage() {
     if (eval(totalString) <= 0) return;
     totalString = "(" + eval(totalString) + ")/100";
