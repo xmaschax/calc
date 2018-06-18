@@ -70,7 +70,11 @@ $(document).ready(function() {
   }
 
 
-
+  function percentage() {
+    if (eval(totalString) <= 0) return;
+    totalString = "(" + eval(totalString) + ")/100";
+    getTotal();
+  }
 
 
 //resetValues empties inputs string & output string
@@ -100,12 +104,12 @@ $(document).ready(function() {
 
       case 'equals':
         getTotal();
-        break
+        break;
 
       case 'percentage':
-         console.log("percentage event clicked")
-         // getTotal();
-         break
+         console.log("percentage event clicked");
+		  percentage();
+         break;
 
       default:
         displayValues( $(this).html() );
