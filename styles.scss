@@ -1,0 +1,60 @@
+body {
+  font-size: 64px;
+  background-color: #000;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px;
+  grid-template-areas:
+  "header header header header"
+  "main main main main"
+  "main main main main"
+  "main main main main"
+  "main main main main"
+  "main main main main";
+}
+.item-header {
+  grid-area: header;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-color: #000;
+  color: #fff;
+  text-align: right;
+  //text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: inherit;
+}
+.btn {
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 5px 5px;
+  border-radius: 50%;
+  font-size: 26px;
+}
+
+.modifier {
+  background-color: #C6C6C6;
+  color: #000;
+}
+
+.operator {
+  float: right;
+  background-color: #FFA500;
+}
+
+
+
+// .btn {
+//   display: block;
+//
+//   &--red {
+//     color: red;
+//   }
+// }
