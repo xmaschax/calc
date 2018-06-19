@@ -78,6 +78,11 @@ $(document).ready(function() {
     getTotal();
   }
 
+  function leadingsign() {
+    totalString = ((-1) * totalString);
+    getTotal();
+  }
+
 
 //resetValues empties inputs string & output string
   function resetValues() {
