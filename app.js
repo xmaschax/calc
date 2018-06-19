@@ -70,16 +70,18 @@ $(document).ready(function () {
 	}
 
 
-  function percentage( ) {
-    if (! isSecure( totalString)) {
-      return;}
+	function percentage () {
+		if (!isSecure(totalString)) {
+			return;
+		}
 
-    totalString = "(" + eval(totalString) + ")/100";
-    getTotal();
-  }
+		totalString = "(" + eval(totalString) + ")/100";
+		getTotal();
+	}
 
 	function leadingsign () {
 		inputs[inputs.length - 1] = inputs.length !== 0 ? inputs[inputs.length - 1] * (-1) : 0;
+		output[output.length - 1] = inputs[inputs.length - 1];
 		showDigit(inputs[inputs.length - 1]);
 	}
 
@@ -123,10 +125,10 @@ $(document).ready(function () {
 				leadingsign();
 				break;
 
-      case 'percentage':
-         console.log("percentage event clicked");
-		  percentage();
-         break;
+			case 'percentage':
+				console.log("percentage event clicked");
+				percentage();
+				break;
 
 			default:
 				displayValues($(this).html());
