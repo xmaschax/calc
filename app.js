@@ -80,9 +80,12 @@ $(document).ready(function () {
 	}
 
 	function leadingsign () {
-		inputs[inputs.length - 1] = inputs.length !== 0 ? inputs[inputs.length - 1] * (-1) : 0;
+		inputs[inputs.length - 1] = inputs[inputs.length - 1] * (-1);
 		output[output.length - 1] = inputs[inputs.length - 1];
 		showDigit(inputs[inputs.length - 1]);
+		// inputs[inputs.length - 1] = inputs.length !== 0 ? inputs[inputs.length - 1] * (-1) : 0;
+		// output[output.length - 1] = inputs[inputs.length - 1];
+
 	}
 
 
