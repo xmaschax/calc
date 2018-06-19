@@ -35,7 +35,7 @@ button {
   text-overflow: inherit;
 }
 .btn {
-  background-color: #444;
+  background-color: #2d2d2d;
   border: none;
   color: white;
   padding: 20px;
@@ -45,9 +45,10 @@ button {
   font-size: 25px;
   display: block;
 }
+
 .btn:hover {
-  color: #C6C6C0;
-  background: green;
+  background-color: #757575;
+  //opacity: 0.9;
 }
 
 .modifier {
@@ -55,18 +56,24 @@ button {
   color: #000;
 }
 
+.modifier:hover {
+  background-color: #efeded;
+}
+
 .operator {
   float: right;
-  background-color: #FFA500;
+  background-color: #FFB500;
+}
+
+.operator:hover {
+  background-color: #fcdc7e;
 }
 
 .number {
   font-size: 27px;
-
-  // &:hover {
-  //   background-color: #000;
-  // }
 }
+
+
 
 
 
@@ -77,4 +84,8 @@ button {
 //   &--red {
 //     color: red;
 //   }
+
+// &:hover {
+//   background-color: #000;
+// }
 // }

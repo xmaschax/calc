@@ -83,12 +83,6 @@ $(document).ready(function () {
 		showDigit(inputs[inputs.length - 1]);
 	}
 
-//
-//   function leadingsign() {
-// // send help
-//     getTotal();
-//   }
-
 
 //resetValues empties inputs string & output string
 	function resetValues () {
