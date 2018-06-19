@@ -70,18 +70,21 @@ $(document).ready(function() {
   }
 
 
-  function percentage( ) {
-    if (! isSecure( )) {
+  function percentage() {
+    if ( ! isSecure(totalString) ) {
       return;
     }
+
     totalString = "(" + eval(totalString) + ")/100";
     getTotal();
   }
 
-  function leadingsign() {
-    totalString = ((-1) * totalString);
-    getTotal();
-  }
+
+//
+//   function leadingsign() {
+// // send help
+//     getTotal();
+//   }
 
 
 //resetValues empties inputs string & output string
@@ -115,7 +118,7 @@ $(document).ready(function() {
 
       case 'percentage':
          console.log("percentage event clicked");
-		  percentage();
+		     percentage();
          break;
 
       default:
