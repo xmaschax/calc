@@ -83,9 +83,6 @@ $(document).ready(function () {
 		inputs[inputs.length - 1] = inputs[inputs.length - 1] * (-1);
 		output[output.length - 1] = inputs[inputs.length - 1];
 		showDigit(inputs[inputs.length - 1]);
-		// inputs[inputs.length - 1] = inputs.length !== 0 ? inputs[inputs.length - 1] * (-1) : 0;
-		// output[output.length - 1] = inputs[inputs.length - 1];
-
 	}
 
 
@@ -136,34 +133,4 @@ $(document).ready(function () {
 
 
 /***fiddle
- if ($(this).is("#percentage")) {
-  console.log("percentage clicked");
-  result = result / 100;
-}
-
-
-
-
-
-
- //join() joins the elements of an array into a string
- // function update() {
-  //   totalString = output.join("");
-  //   $(".item-header").html(totalString);
-  //
-  // }
-
-
-
- // //*leadingsign function*: ---
- //   $("#leadingsign").click(function(){
-  //     if (this.id === "leadingsign"){
-  //       console.log("vorzeichen");
-  //
-  //         // number = (parseFloat(newNumber,10) * (-1)).toString(10);
-  //       //}
-  //
-  //     }
- //   });
-
- */
+*/
