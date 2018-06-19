@@ -1,6 +1,9 @@
 body {
   font-size: 64px;
   background-color: #000;
+  font-family: helvetica;
+  font-weight: lighter;
+
 }
 
 .container {
@@ -36,7 +39,8 @@ body {
   text-align: center;
   margin: 5px 5px;
   border-radius: 50%;
-  font-size: 26px;
+  font-size: 25px;
+  font-family: helvetica;
 }
 
 .modifier {
@@ -49,6 +53,9 @@ body {
   background-color: #FFA500;
 }
 
+.number {
+  font-size: 27px;
+}
 
 
 // .btn {
