@@ -69,8 +69,11 @@ $(document).ready(function() {
     output = [result];
   }
 
-  // calculate percentage like the calculate app at macOS
-  function percentage() {
+
+  function percentage( ) {
+    if (! isSecure( )) {
+      return;
+    }
     totalString = "(" + eval(totalString) + ")/100";
     getTotal();
   }
