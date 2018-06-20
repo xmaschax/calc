@@ -1,24 +1,24 @@
-// var gulp = require('gulp');
-//
-// gulp.task('default', function() {
-//   // place code for your default task here
-// });
-// gulp.task('default', [ 'html', 'css', 'js' ]);
-
+//inputs stores inputs to calc later
+//output stores values (outputs), shown on display
+//totalString string stores current input string
+//operators array with all operators and modifiers
+//digits array with digits
+//symbols stores operators as well as digits
 $(document).ready(function () {
-	//inputs stores inputs to calc later
 	var inputs = [];
-	//output stores values (outputs), shown on display
 	var output = [];
-
-	//totalString string stores current input string
 	var totalString;
-	//operators array with all operators and modifiers
 	var operators = ["+", "-", "÷", "/", "%", "*", "x", "."];
-	//digits array with digits
 	var digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-	//symbols stores operators as well as digits
 	var symbols = digits.concat(operators);
+
+
+//isSecure parameter value is converted to String
+//returns value if it's included in symbols
+		function isSecure (value) {
+			return symbols.includes(value.toString());
+		}
+
 
 //getValue checks whether input value is insecure, if so return
 //pushes new value in inputs-array
@@ -31,6 +31,7 @@ $(document).ready(function () {
 		totalString = inputs.join("");
 		console.log(totalString);
 	}
+
 
 //displayValues checks whether currentValue value is insecure, is so return
 //else currentValue gets pushed into output array
@@ -47,16 +48,12 @@ $(document).ready(function () {
 		console.log(outputString); //debugging
 	}
 
-//isSecure parameter value is converted to String
-//returns value if it's included in symbols
-	function isSecure (value) {
-		return symbols.includes(value.toString());
-	}
 
 //showDigit displays committed parameters
 	function showDigit (digit) {
 		$(".item-header").html(digit);
 	}
+
 
 //getTotal checks if totalString is empty (no button has been clicked before)
 //if so return
@@ -77,28 +74,6 @@ $(document).ready(function () {
 	}
 
 
-	function percentage () {
-		if (!isSecure(totalString)) {
-			console.log("kein prozent");
-			return;
-		}
-		console.log("jap, prozent");
-		totalString = "(" + eval(totalString) + ")/100";
-		getTotal();
-	}
-
-	function leadingsign() {
-		totalString = totalString * (-1);
-		getTotal();
-	}
-
-
-//resetValues empties inputs string & output string
-	function resetValues () {
-		inputs = [""];
-		output = [""];
-	}
-
 //click-function: is() determines, if the two values (from $this and data-attribute number) are the same value
 //if true and totalString is empty, return
 //else checking this's ID if it is 'clearall': values will be resetted to empty string
@@ -106,7 +81,6 @@ $(document).ready(function () {
 //if it is 'equals': getTotal
 //default : displayValues 'this'
 //          getValue gets data-attributes 'data'
-
 	$("[data-button]").click(function () {
 		if (!$(this).is('[data-button-number]') && !totalString) {
 			return;
@@ -135,11 +109,29 @@ $(document).ready(function () {
 				displayValues($(this).html());
 				getValue($(this).data('value'));
 		}
-
 	});
 
+
+		function percentage () {
+			if (!isSecure(totalString)) {
+				console.log("kein prozent");
+				return;
+			}
+			console.log("jap, prozent");
+			totalString = "(" + eval(totalString) + ")/100";
+			getTotal();
+		}
+
+
+		function leadingsign() {
+			totalString = totalString * (-1);
+			getTotal();
+		}
+
+
+//resetValues empties inputs string & output string
+		function resetValues () {
+			inputs = [""];
+			output = [""];
+		}
 });
-
-
-/***fiddle
-*/
