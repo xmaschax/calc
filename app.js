@@ -1,3 +1,10 @@
+// var gulp = require('gulp');
+//
+// gulp.task('default', function() {
+//   // place code for your default task here
+// });
+// gulp.task('default', [ 'html', 'css', 'js' ]);
+
 $(document).ready(function () {
 	//inputs stores inputs to calc later
 	var inputs = [];
@@ -74,16 +81,21 @@ $(document).ready(function () {
 		if (!isSecure(totalString)) {
 			return;
 		}
-
+		console.log("jap, prozent");
 		totalString = "(" + eval(totalString) + ")/100";
 		getTotal();
 	}
 
-	function leadingsign () {
-		inputs[inputs.length - 1] = inputs[inputs.length - 1] * (-1);
-		output[output.length - 1] = inputs[inputs.length - 1];
-		showDigit(inputs[inputs.length - 1]);
+	function leadingsign() {
+		totalString = totalString * (-1);
+		getTotal();
 	}
+
+	// function leadingsign () {
+	// 	inputs[inputs.length - 1] = inputs[inputs.length - 1] * (-1);
+	// 	output[output.length - 1] = inputs[inputs.length - 1];
+	// 	showDigit(inputs[inputs.length - 1]);
+	// }
 
 
 //resetValues empties inputs string & output string

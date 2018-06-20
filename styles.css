@@ -48,7 +48,7 @@ button {
 
 .btn:hover {
   background-color: #757575;
-  //opacity: 0.9;
+  /* //opacity: 0.9; */
 }
 
 .modifier {
@@ -77,7 +77,7 @@ button {
 
 
 
-
+/*
 
 // .btn {
 //   display: block;
@@ -89,4 +89,4 @@ button {
 // &:hover {
 //   background-color: #000;
 // }
-// }
+// } */
