@@ -112,7 +112,8 @@ $(document).ready(function () {
 
 
 		function percentage () {
-			if (!isSecure(totalString)) {
+			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
+			// if (!isSecure(totalString)) {
 				console.log("kein prozent");
 				return;
 			}
