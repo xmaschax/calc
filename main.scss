@@ -1,11 +1,19 @@
 //variables
 $color-black: #000;
 $color-white: #fff;
+$color-anthrazit: #2d2d2d;
+$color-anthrazitLight: #757575;
+$color-grey: #C6C6C6;
+$color-greyLight: #efeded;
+$color-orange: #FFB500;
+$color-orangeLight: #fcdc7e;
+
 
 body {
   font-size: 64px;
   background-color: $color-black;
 }
+
 
 body,
 button {
@@ -13,6 +21,7 @@ button {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
+
 
 .container {
   display: grid;
@@ -28,6 +37,7 @@ button {
   "main main main main";
 }
 
+
 .item-header {
   grid-area: header;
   grid-row-start: 1;
@@ -40,10 +50,11 @@ button {
   text-overflow: inherit;
 }
 
+
 .btn {
-  background-color: #2d2d2d;
+  background-color: $color-anthrazit;
   border: none;
-  color: white;
+  color: $color-white;
   padding: 20px;
   text-align: center;
   margin: 5px 5px;
@@ -52,28 +63,30 @@ button {
   display: block;
 
   &:hover {
-    background-color: #757575;
+    background-color: $color-anthrazitLight;
   }
 }
+
 
 .modifier {
-  background-color: #C6C6C6;
+  background-color: $color-grey;
   color: $color-black;
-  font-size: 20px;
 
   &:hover {
-    background-color: #efeded;
+    background-color: $color-greyLight;
   }
 }
+
 
 .operator {
   float: right;
-  background-color: #FFB500;
+  background-color: $color-orange;
 
   &:hover {
-    background-color: #fcdc7e;
+    background-color: $color-orangeLight;
   }
 }
+
 
 .number {
   font-size: 27px;
