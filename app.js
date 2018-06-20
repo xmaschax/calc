@@ -79,6 +79,7 @@ $(document).ready(function () {
 
 	function percentage () {
 		if (!isSecure(totalString)) {
+			console.log("kein prozent");
 			return;
 		}
 		console.log("jap, prozent");
@@ -90,12 +91,6 @@ $(document).ready(function () {
 		totalString = totalString * (-1);
 		getTotal();
 	}
-
-	// function leadingsign () {
-	// 	inputs[inputs.length - 1] = inputs[inputs.length - 1] * (-1);
-	// 	output[output.length - 1] = inputs[inputs.length - 1];
-	// 	showDigit(inputs[inputs.length - 1]);
-	// }
 
 
 //resetValues empties inputs string & output string
@@ -140,7 +135,9 @@ $(document).ready(function () {
 				displayValues($(this).html());
 				getValue($(this).data('value'));
 		}
+
 	});
+
 });
 
 
