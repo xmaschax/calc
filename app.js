@@ -37,7 +37,6 @@ $(document).ready(function () {
 //else currentValue gets pushed into output array
 //output.join(""): joins the elements of output in a String (outputString)
 //calls showDigit with outputString as parameters
-
 	function displayValues (currentValue) {
 		if (!isSecure(currentValue)) {
 			return;

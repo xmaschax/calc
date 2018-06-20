@@ -75,20 +75,3 @@ button {
 .number {
   font-size: 27px;
 }
-
-
-
-
-/*
-
-// .btn {
-//   display: block;
-//
-//   &--red {
-//     color: red;
-//   }
-
-// &:hover {
-//   background-color: #000;
-// }
-// } */
