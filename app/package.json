@@ -1,0 +1,27 @@
+{
+  "name": "projektordner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmaschax/calc.git"
+  },
+  "author": "Marie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xmaschax/calc/issues"
+  },
+  "homepage": "https://github.com/xmaschax/calc#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-css": "^0.1.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "gulp-css-scss": "^0.1.0"
+  }
+}
