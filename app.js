@@ -78,7 +78,7 @@ $(document).ready(function () {
 
 
 	function percentage () {
-		if (!isSecure(totalString)) {
+		if (!Number(totalString) && !isSecure(Number(totalString) * -1) && !isSecure(totalString)) {
 			console.log("kein prozent");
 			return;
 		}
@@ -87,7 +87,7 @@ $(document).ready(function () {
 		getTotal();
 	}
 
-	function leadingsign() {
+	function leadingsign () {
 		totalString = totalString * (-1);
 		getTotal();
 	}
@@ -97,6 +97,7 @@ $(document).ready(function () {
 	function resetValues () {
 		inputs = [""];
 		output = [""];
+		totalString = "";
 	}
 
 //click-function: is() determines, if the two values (from $this and data-attribute number) are the same value
@@ -142,4 +143,4 @@ $(document).ready(function () {
 
 
 /***fiddle
-*/
+ */
