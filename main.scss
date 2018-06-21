@@ -61,6 +61,7 @@ button {
   border-radius: 50%;
   font-size: 25px;
   display: block;
+  outline: 0;
 
   &:hover {
     background-color: $color-anthrazitLight;
@@ -71,6 +72,7 @@ button {
 .modifier {
   background-color: $color-grey;
   color: $color-black;
+  outline: 0;
 
   &:hover {
     background-color: $color-greyLight;
@@ -81,6 +83,7 @@ button {
 .operator {
   float: right;
   background-color: $color-orange;
+  outline: 0;
 
   &:hover {
     background-color: $color-orangeLight;
