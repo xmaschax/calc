@@ -95,7 +95,7 @@ $(document).ready(function () {
 		if ($(this).is('#percentage')) {
 			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
 				return;
-				}
+			}
 				totalString = "(" + eval(totalString) + ")/100";
 				getTotal();
 		}
