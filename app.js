@@ -85,6 +85,21 @@ $(document).ready(function () {
 			return;
 		}
 
+		if ($(this).is('#leadingsign')) {
+			console.log("vorzeichen if");
+			totalString = totalString * (-1);
+			getTotal();
+		}
+
+
+		if ($(this).is('#percentage')) {
+			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
+				return;
+				}
+				totalString = "(" + eval(totalString) + ")/100";
+				getTotal();
+		}
+
 		switch ($(this).attr('id')) {
 			case 'clearall':
 				resetValues();
@@ -95,35 +110,12 @@ $(document).ready(function () {
 				getTotal();
 				break;
 
-			case 'leadingsign':
-				leadingsign();
-				break;
-
-			case 'percentage':
-				console.log("percentage event clicked");
-				percentage();
-				break;
-
 			default:
 				displayValues($(this).html());
 				getValue($(this).data('value'));
 		}
+
 	});
-
-
-		function percentage () {
-			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
-				return;
-			}
-			totalString = "(" + eval(totalString) + ")/100";
-			getTotal();
-		}
-
-
-		function leadingsign() {
-			totalString = totalString * (-1);
-			getTotal();
-		}
 
 
 //resetValues empties inputs string & output string
