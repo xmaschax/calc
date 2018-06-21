@@ -15,9 +15,9 @@ $(document).ready(function () {
 
 //isSecure parameter value is converted to String
 //returns value if it's included in symbols
-		function isSecure (value) {
-			return symbols.includes(value.toString());
-		}
+	function isSecure (value) {
+		return symbols.includes(value.toString());
+	}
 
 
 //getValue checks whether input value is insecure, if so return
@@ -70,6 +70,7 @@ $(document).ready(function () {
 		console.log('result', result); //debugging
 		inputs = [result];
 		output = [result];
+		totalString = result;
 	}
 
 
@@ -85,27 +86,17 @@ $(document).ready(function () {
 			return;
 		}
 
-		if ($(this).is('#leadingsign')) {
-			console.log("vorzeichen if");
-			totalString = totalString * (-1);
-			getTotal();
-		}
-
-
-		if ($(this).is('#percentage')) {
-			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
-				return;
-			}
-				totalString = "(" + eval(totalString) + ")/100";
-				getTotal();
-		}
-
 		switch ($(this).attr('id')) {
 			case 'clearall':
 				resetValues();
 				showDigit(0);
 				break;
-
+			case 'leadingsign':
+				leadingsign();
+				break;
+			case 'percentage':
+				percentage();
+				break;
 			case 'equals':
 				getTotal();
 				break;
@@ -117,10 +108,42 @@ $(document).ready(function () {
 
 	});
 
+	function leadingsign () {
+		console.log("vorzeichen if");
+		// if totalString is not a single Number enter here
+		if (!Number(totalString)) {
+			// cut the last character of string
+			var lastSign = totalString.slice(-1);
+			// check if last character of string is a number
+			if (!Number(lastSign)) return;
+			// multiply it with -1
+			lastSign = lastSign * (-1);
+			// substring(0, totalString.length -1) -> take the hole totalString accept last character
+			//  + "(" + lastSign + ")" -> concat the last character as a negative number
+			totalString = totalString.substring(0, totalString.length - 1) + "(" + lastSign + ")";
+		} else {
+			// enter here if totalString is a single Number
+			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
+				return;
+			}
+			// eval is required because it returns a Number -> String can't be multiply with -1
+			totalString = eval(totalString) * (-1);
+		}
+		getTotal();
+	}
+
+
+	function percentage () {
+		if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
+			return;
+		}
+		totalString = "(" + eval(totalString) + ")/100";
+		getTotal();
+	}
 
 //resetValues empties inputs string & output string
-		function resetValues () {
-			inputs = [""];
-			output = [""];
-		}
+	function resetValues () {
+		inputs = [""];
+		output = [""];
+	}
 });
