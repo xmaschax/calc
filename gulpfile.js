@@ -1,15 +1,15 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-var sassFiles = 'app/*.scss',
-    cssDest = 'app/css/';
+var sassFiles = './*.scss',
+	cssDest = './css/';
 
 gulp.task('sass', function () {
-  return gulp.src('app/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('app/css'));
+	return gulp.src(sassFiles)
+		.pipe(sass())
+		.pipe(gulp.dest(cssDest));
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./*.scss', ['sass']);
+	gulp.watch(sassFiles, ['sass']);
 });
