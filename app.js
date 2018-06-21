@@ -85,7 +85,7 @@ $(document).ready(function () {
 			return;
 		}
 
-		switch (this.id) {
+		switch ($(this).attr('id')) {
 			case 'clearall':
 				resetValues();
 				showDigit(0);
@@ -113,11 +113,8 @@ $(document).ready(function () {
 
 		function percentage () {
 			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
-			// if (!isSecure(totalString)) {
-				console.log("kein prozent");
 				return;
 			}
-			console.log("jap, prozent");
 			totalString = "(" + eval(totalString) + ")/100";
 			getTotal();
 		}
