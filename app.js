@@ -111,14 +111,16 @@ $(document).ready(function () {
 	function leadingsign () {
 		console.log("vorzeichen if");
 		// if totalString is not a single Number enter here
+		// Wenn in totalString sowas steht wie: 3+2
 		if (!Number(totalString)) {
-			// cut the last character of string
+			// get the last character of string
 			var lastSign = totalString.slice(-1);
 			// check if last character of string is a number
+			// Sollte in totalString sowas stehen wie: 3+ -> dann wäre das + das letzte Zeichen aber keine Zahl, hier muss man dann raus
 			if (!Number(lastSign)) return;
 			// multiply it with -1
 			lastSign = lastSign * (-1);
-			// substring(0, totalString.length -1) -> take the hole totalString accept last character
+			// substring(0, totalString.length -1) -> return the hole totalString accept last character
 			//  + "(" + lastSign + ")" -> concat the last character as a negative number
 			totalString = totalString.substring(0, totalString.length - 1) + "(" + lastSign + ")";
 		} else {
