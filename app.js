@@ -44,7 +44,6 @@ $(document).ready(function () {
 		output.push(currentValue);
 		outputString = output.join("");
 		showDigit(outputString);
-		console.log(outputString); //debugging
 	}
 
 
