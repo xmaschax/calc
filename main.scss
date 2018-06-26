@@ -10,87 +10,89 @@ $color-orangeLight: #fcdc7e;
 
 
 body {
-  font-size: 64px;
-  background-color: $color-black;
+    background-color: $color-black;
+    font-size: 64px;
+
 }
 
 
 body,
 button {
-  font-family: 'helvetica neue';
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
+    font-family: 'helvetica neue';
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
 }
 
 
 .container {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 80px 80px 80px 80px;
-  grid-template-rows: 80px 80px;
-  grid-template-areas:
-  "header header header header"
-  "main main main main"
-  "main main main main"
-  "main main main main"
-  "main main main main"
-  "main main main main";
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px;
+    grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "main main main main";
 }
 
 
 .item-header {
-  grid-area: header;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  background-color: $color-black;
-  color: $color-white;
-  text-align: right;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: inherit;
+    font-weight: 300;
+    grid-area: header;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: $color-black;
+    color: $color-white;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: inherit;
 }
 
 
 .btn {
-  background-color: $color-anthrazit;
-  border: none;
-  color: $color-white;
-  padding: 20px;
-  text-align: center;
-  margin: 5px 5px;
-  border-radius: 50%;
-  font-size: 25px;
-  display: block;
-  outline: 0;
+    background-color: $color-anthrazit;
+    border: none;
+    color: $color-white;
+    padding: 20px;
+    text-align: center;
+    margin: 5px 5px;
+    border-radius: 50%;
+    font-size: 25px;
+    display: block;
+    outline: 0;
 
-  &:hover {
-    background-color: $color-anthrazitLight;
-  }
+    &:hover {
+        background-color: $color-anthrazitLight;
+    }
 }
 
 
 .modifier {
-  background-color: $color-grey;
-  color: $color-black;
-  outline: 0;
+    background-color: $color-grey;
+    color: $color-black;
+    outline: 0;
 
-  &:hover {
-    background-color: $color-greyLight;
-  }
+    &:hover {
+      background-color: $color-greyLight;
+    }
 }
 
 
 .operator {
-  float: right;
-  background-color: $color-orange;
-  outline: 0;
+    float: right;
+    background-color: $color-orange;
+    outline: 0;
 
-  &:hover {
-    background-color: $color-orangeLight;
-  }
+    &:hover {
+      background-color: $color-orangeLight;
+    }
 }
 
 
 .number {
-  font-size: 27px;
+    font-size: 27px;
 }

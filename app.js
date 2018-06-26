@@ -1,9 +1,9 @@
-//inputs stores inputs to calc later
-//output stores values (outputs), shown on display
-//totalString string stores current input string
-//operators array with all operators and modifiers
-//digits array with digits
-//symbols stores operators as well as digits
+// inputs stores inputs to calc later
+// output stores values (outputs), shown on display
+// totalString string stores current input string
+// operators array with all operators and modifiers
+// digits array with digits
+// symbols stores operators as well as digits
 $(document).ready(function () {
 	var inputs = [];
 	var output = [];
@@ -13,16 +13,16 @@ $(document).ready(function () {
 	var symbols = digits.concat(operators);
 
 
-//isSecure parameter value is converted to String
-//returns value if it's included in symbols
+// isSecure parameter value is converted to String
+// returns value if it's included in symbols
 	function isSecure (value) {
 		return symbols.includes(value.toString());
 	}
 
 
-//getValue checks whether input value is insecure, if so return
-//pushes new value in inputs-array
-//joins elements of array into string and stores it in totalString
+// getValue checks whether input value is insecure, if so return
+// pushes new value in inputs-array
+// joins elements of array into string and stores it in totalString
 	function getValue (input) {
 		if (!isSecure(input)) {
 			return;
@@ -33,10 +33,10 @@ $(document).ready(function () {
 	}
 
 
-//displayValues checks whether currentValue value is insecure, is so return
-//else currentValue gets pushed into output array
-//output.join(""): joins the elements of output in a String (outputString)
-//calls showDigit with outputString as parameters
+// displayValues checks whether currentValue value is insecure, is so return
+// else currentValue gets pushed into output array
+// output.join(""): joins the elements of output in a String (outputString)
+// calls showDigit with outputString as parameters
 	function displayValues (currentValue) {
 		if (!isSecure(currentValue)) {
 			return;
@@ -47,18 +47,18 @@ $(document).ready(function () {
 	}
 
 
-//showDigit displays committed parameters
+// showDigit displays committed parameters
 	function showDigit (digit) {
 		$(".item-header").html(digit);
 	}
 
 
-//getTotal checks if totalString is empty (no button has been clicked before)
-//if so return
-//evaluates totalString, stores result in var result
-//displays result with two decimal places
-//stores result in inputs array
-//stores result in output array
+// getTotal checks if totalString is empty (no button has been clicked before)
+// if so return
+// evaluates totalString, stores result in var result
+// displays result with two decimal places
+// stores result in inputs array
+// stores result in output array
 	function getTotal () {
 		if (!totalString) {
 			return;
@@ -73,13 +73,13 @@ $(document).ready(function () {
 	}
 
 
-//click-function: is() determines, if the two values (from $this and data-attribute number) are the same value
-//if true (symbol is not a number) and totalString is empty, return
-//else checking this's ID if it is 'clearall': values will be resetted to empty string
-//display set to 0
-//if it is 'equals': getTotal
-//default : displayValues 'this'
-//          getValue gets data-attributes 'data'
+// click-function: is() determines, if the two values (from $this and data-attribute number) are the same value
+// if true (symbol is not a number) and totalString is empty, return
+// else checking this's ID if it is 'clearall': values will be resetted to empty string
+// display set to 0
+// if it is 'equals': getTotal
+// default : displayValues 'this'
+//           getValue gets data-attributes 'data'
 	$("[data-button]").click(function () {
 		if (!$(this).is('[data-button-number]') && !totalString) {
 			return;
@@ -108,7 +108,7 @@ $(document).ready(function () {
 // if totalString is not a single Number
 // create var lastSign, which is an array
 // looping through amount of arithmetic operators in array
-// split gives back array, as long as symbol is not found in string, lastSign.length = 0
+// split divides string into an array of substrings, gives back array, as long as symbol is not found in string, lastSign.length = 0
 // found symbol, write it into array
 // reads last element of array
 // passes lastSign.length to var (for later: when cutting off last part of string)
@@ -154,7 +154,7 @@ $(document).ready(function () {
 
 // resetValues empties inputs string & output string
 	function resetValues () {
-		inputs = [""];
-		output = [""];
+		inputs = [];
+		output = [];
 	}
 });
