@@ -115,9 +115,9 @@ $(document).ready(function () {
 // check if last character of string is not a number, if so return
 // multiply lastSign with -1
 // substring(0, totalString.length -numberRemoveFromTotalString): return the hole totalString accept last number
-// concat the last character as a negative number
+// concat the last character as a negative number using brackets
 // if totalString is a single digit go to else {
-// if totalString is empty and totalString * (-1) is not safe and totalString is not safe
+// converts totalString to a number and multiplies with -1
 	function leadingsign () {
 		if (!Number(totalString)) {
 			var lastSign = [];
@@ -132,10 +132,7 @@ $(document).ready(function () {
 			lastSign = Number(lastSign) * -1;
 			totalString = totalString.substring(0, totalString.length - numberRemoveFromTotalString) + "(" + lastSign + ")";
 		} else {
-				if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
-					return;
-				}
-				totalString = eval(totalString) * (-1);
+				totalString = Number(totalString) * (-1);
 			}
 		getTotal();
 	}
