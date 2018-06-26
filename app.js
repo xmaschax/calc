@@ -107,11 +107,12 @@ $(document).ready(function () {
 		}
 
 	});
-
+// if totalString is not a single Number
+// get the last character of string
+// check if last character of string is a number return
+// concat the last character as a negative number
+//
 	function leadingsign () {
-		console.log("vorzeichen if");
-		// if totalString is not a single Number enter here
-		// Wenn in totalString sowas steht wie: 3+2
 		if (!Number(totalString)) {
 			// loope durch ein array von rechenoperationen (Das ist Jquery ;)
 			// kann das Array von oben nicht nehmen, weil % oder . nicht in frage kommen darf
