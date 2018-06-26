@@ -29,7 +29,7 @@ $(document).ready(function () {
 		}
 		inputs.push(input);
 		totalString = inputs.join("");
-		console.log(totalString);
+		console.log(totalString); //debugging
 	}
 
 
@@ -75,7 +75,7 @@ $(document).ready(function () {
 
 
 //click-function: is() determines, if the two values (from $this and data-attribute number) are the same value
-//if true and totalString is empty, return
+//if true (symbol is not a number) and totalString is empty, return
 //else checking this's ID if it is 'clearall': values will be resetted to empty string
 //display set to 0
 //if it is 'equals': getTotal
@@ -100,7 +100,6 @@ $(document).ready(function () {
 			case 'equals':
 				getTotal();
 				break;
-
 			default:
 				displayValues($(this).html());
 				getValue($(this).data('value'));
@@ -109,9 +108,11 @@ $(document).ready(function () {
 	});
 // if totalString is not a single Number
 // get the last character of string
-// check if last character of string is a number return
+// check if last character of string is a number, if so return
+// multiply lastSign with -1
 // concat the last character as a negative number
-//
+// if totalString is a single digit go to else {
+// if totalString is empty and totalString * (-1) is not safe and totalString is not safe
 	function leadingsign () {
 		if (!Number(totalString)) {
 			var lastSign = totalString.slice(-1);
@@ -119,13 +120,11 @@ $(document).ready(function () {
 			lastSign = lastSign * (-1);
 			totalString = totalString.substring(0, totalString.length - 1) + "(" + lastSign + ")";
 		} else {
-			// enter here if totalString is a single Number
-			if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
-				return;
+				if (!(totalString) && !isSecure(totalString)) {
+					return;
+				}
+				totalString = eval(totalString) * (-1);
 			}
-			// eval is required because it returns a Number -> String can't be multiply with -1
-			totalString = eval(totalString) * (-1);
-		}
 		getTotal();
 	}
 
