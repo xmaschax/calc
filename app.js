@@ -132,7 +132,7 @@ $(document).ready(function () {
 			lastSign = Number(lastSign) * -1;
 			totalString = totalString.substring(0, totalString.length - numberRemoveFromTotalString) + "(" + lastSign + ")";
 		} else {
-				if (!(totalString) && !isSecure(totalString)) {
+				if (!(totalString) && !isSecure((totalString) * -1) && !isSecure(totalString)) {
 					return;
 				}
 				totalString = eval(totalString) * (-1);
