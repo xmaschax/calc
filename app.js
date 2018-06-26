@@ -115,10 +115,27 @@ $(document).ready(function () {
 // if totalString is empty and totalString * (-1) is not safe and totalString is not safe
 	function leadingsign () {
 		if (!Number(totalString)) {
-			var lastSign = totalString.slice(-1);
+			// loope durch ein array von rechenoperationen (Das ist Jquery ;)
+			// kann das Array von oben nicht nehmen, weil % oder . nicht in frage kommen darf
+			// Split gibt ein Array zurück, solange wir das vorzeichen im String nicht finden, ist lastSign.length = 0
+			// Findet er eins z.b. für das Beispiel oben 3+2 das + -> werden die 2 zahlen ins array geschrieben -> ["3", "2"]
+			var lastSign = [];
+			$.each(["+", "-", "*", "/"], function (i, value) {
+				if (lastSign.length <= 0) {
+					lastSign = totalString.split(value);
+				}
+			});
+			// Liest das letzte Element des Arrays aus (ich glaube das ist echt best practice, länge des Arrays - 1, eleganter geht nicht :P)
+			lastSign = lastSign[lastSign.length - 1];
+			// Wir müssen wissen wie viel Stellen die letzte nummer hat, damit wir die später beim substring abschneiden können
+			var numberToRemoveFromTotalString = lastSign.length;
+			// Sollte in totalString sowas stehen wie: 3+ -> dann wäre das + das letzte Zeichen aber keine Zahl, hier muss man dann raus
 			if (!Number(lastSign)) return;
-			lastSign = lastSign * (-1);
-			totalString = totalString.substring(0, totalString.length - 1) + "(" + lastSign + ")";
+			// multiply it with -1
+			lastSign = Number(lastSign) * -1;
+			// substring(0, totalString.length -numberToRemoveFromTotalString) -> return the hole totalString accept last number
+			//  + "(" + lastSign + ")" -> concat the last number as a negative number
+			totalString = totalString.substring(0, totalString.length - numberToRemoveFromTotalString) + "(" + lastSign + ")";
 		} else {
 				if (!(totalString) && !isSecure(totalString)) {
 					return;
