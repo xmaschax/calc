@@ -7,7 +7,7 @@
 $(document).ready(function () {
 	var inputs = [];
 	var output = [];
-	var totalString;
+	var totalString = "";
 	var operators = ["+", "-", "÷", "/", "%", "*", "x", "."];
 	var digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 	var symbols = digits.concat(operators);
@@ -60,7 +60,7 @@ $(document).ready(function () {
 // stores result in inputs array
 // stores result in output array
 	function getTotal () {
-		if (!totalString) {
+		if (!totalString && !isSecure(totalString)) {
 			return;
 		}
 		var result = eval(totalString);
@@ -118,6 +118,7 @@ $(document).ready(function () {
 // concat the last character as a negative number using brackets
 // if totalString is a single digit go to else {
 // converts totalString to a number and multiplies with -1
+// call getTotal
 	function leadingsign () {
 		if (!Number(totalString)) {
 			var lastSign = [];

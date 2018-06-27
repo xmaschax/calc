@@ -10,11 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/xmaschax/calc.git"
   },
-  "author": "Marie",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xmaschax/calc/issues"
-  },
   "homepage": "https://github.com/xmaschax/calc#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
